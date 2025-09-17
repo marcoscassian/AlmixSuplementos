@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            ALMIX Suplementos
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="static/css/base.css">
+    {% block estilos %}{% endblock %}
+    <link href="" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1 href="/" class="home">ALMIX Suplementos</h1>
+            
+        <div class="botoes">
+            {% if session.usuario %}
+                <nav class="botoes_logged">
+                    <img src="static/img/carrinho.png" alt="Carrinho">
+                    <a href="/" class="Usuario">Usuario</a> <!-- tem q como sera feito aqui ainda-->
+                </nav>
+            
+            {% else %}
+                <nav class="botoes_logged">
+                    <img src="static/img/carrinho.png" alt="Carrinho">
+                    <a href="/" class="Login">Login</a>
+                </nav>
+            {% endif %}
+        </div>
+    </header>
+    <h1>
+        {% block pagina %}
+            
+        {% endblock %}
+    </h1>
+
+    {% block conteudo %}
+        
+    {% endblock %}
+    
+</body>
+</html>

@@ -6,11 +6,28 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
+    background-color: #050505;
+}
+
+.top {
+    display: flex;
+    position: relative;
+    height: 50px;
+    display: flex;
+    background-color: #ED1C24;
+    align-items: center;
+    color: white;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.top > p {
+    color: white;
 }
 
 header {
     position: relative;
-    height: 88px;
+    height: 90px;
     display: flex;
     background-color: #181616;
     align-items: center;
@@ -29,8 +46,10 @@ header > h1 {
     font-weight: bold;
 }
 
-/* Carrinho e login */
 .botoes {
+    position: absolute;
+    padding-left: -40px;
+    left: 94%;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -39,10 +58,10 @@ header > h1 {
 .botoes_logged {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .botoes_logged img {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
 }

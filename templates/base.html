@@ -13,6 +13,9 @@
     <link href="" rel="stylesheet" />
 </head>
 <body>
+    <div class="top">
+        <p>Navegue pela nossa loja para conhecer nossos produtos</p>
+    </div>
     <header>
         <h1 href="/" class="home">ALMIX Suplementos</h1>
             
@@ -25,8 +28,12 @@
             
             {% else %}
                 <nav class="botoes_logged">
-                    <img src="static/img/carrinho.png" alt="Carrinho">
-                    <a href="/" class="Login">Login</a>
+                    <a href="">
+                        <img src="static/img/carrinho.png" alt="Carrinho">
+                    </a>
+                    <a href="">
+                        <img src="static/img/user.png" alt="Login">
+                    </a>
                 </nav>
             {% endif %}
         </div>

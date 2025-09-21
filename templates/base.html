@@ -13,9 +13,7 @@
     <link href="" rel="stylesheet" />
 </head>
 <body>
-    <div class="top">
-        <p>Navegue pela nossa loja para conhecer nossos produtos</p>
-    </div>
+    {% block cabecalho %}
     <header>
         <h1 href="/" class="home">ALMIX Suplementos</h1>
             
@@ -38,6 +36,7 @@
             {% endif %}
         </div>
     </header>
+    {% endblock %}
     <h1>
         {% block pagina %}
             

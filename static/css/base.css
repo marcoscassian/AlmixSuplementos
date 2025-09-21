@@ -14,7 +14,7 @@ body {
     position: relative;
     height: 50px;
     display: flex;
-    background-color: #ED1C24;
+    background-color: #181616;
     align-items: center;
     color: white;
     justify-content: center;
@@ -29,7 +29,7 @@ header {
     position: relative;
     height: 90px;
     display: flex;
-    background-color: #181616;
+    background-color: #ED1C24;
     align-items: center;
     color: white;
     justify-content: flex-end;

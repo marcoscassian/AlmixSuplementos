@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 
 {% block estilos %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
@@ -5,9 +6,26 @@
 
 {% block conteudo %}
 
-<div class="conhtent">
-    <h2>Bem-vindo a ALMIX Suplementos</h2>
-    <p>Descubra ofertas imperdíveis, produtos exclusivos e benefícios especiais que só os membros cadastrados podem acessar. Não fique de fora — seu próximo desconto incrível começa aqui!</p>
+<div class="cards-container">
+    {% for card in cards %}
+    <div class="card">
+        <div class="imgcard">
+            <img src="{{ card.imagem }}" alt="Imagem do {{ card.titulo }}">
+        </div>
+        <div class="content">
+            <div class="tag">
+                <p>{{ card.desconto }}</p>
+            </div>
+            <h3>{{ card.titulo }}</h3>
+            <h2>{{ card.preco }}</h2>
+            <p>{{ card.precoalt }}</p>
+            <div class="comprar">
+                <a href="#">Comprar</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 </div>
+
 
 {% endblock %}

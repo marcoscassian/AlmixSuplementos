@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+{% block conteudo %}
+
+<div class="cards-container">
+    {% for card in cards %}
+    <div class="card">
+        <div class="imgcard">
+            <div class="tag">
+                <p>{{ card.desconto }}</p>
+            </div>
+            <img src="{{ url_for('static', filename='img/' + card.imagem) }}" alt="Imagem do {{ card.titulo }}">
+        </div>
+        <div class="content">
+            <h3>{{ card.titulo }}</h3>
+            <h2>{{ card.preco }}</h2>
+            <p>{{ card.descricao }}</p>
+            <div class="editar">
+                <a href="#">editar</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% block conteudo %}
+
+<link rel="stylesheet" href="static/css/cadastro_usuario.css">
+<div class="container">
+    <h1>ALMIX Suplementos</h1>
+    <p>Crie sua conta e acesse o painel de controle.</p>
+
+    <form action="{{ url_for('cadastro_usuario') }}" method="post">
+        <div class="input-group">
+            <input type="text" name="name" placeholder="Nome de Usuário">
+            <span class="icon"></span>
+        </div>
+        <div class="input-group">
+            <input type="text" name="email" placeholder="Email">
+            <span class="icon"></span>
+        </div>
+        <div class="input-group">
+            <input type="password" name="password" placeholder="Senha">
+            <span class="icon"></span>
+        </div>
+        <div class="input-group">
+            <input type="password" name="confirm_password" placeholder="Confirme sua senha">
+            <span class="icon"></span>
+        </div>
+        <button>Cadastre-se</button>
+    </form>
+</div>
+
+<div class="subcontainer">
+    <p>
+        Já tem uma conta?
+        <a href="{{ url_for('login') }}">Conecte-se</a>
+    </p>
+</div>
+
+{% endblock %}

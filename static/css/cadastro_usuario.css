@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #070707;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+}
+
+.container {
+    width: 400px;
+    background-color: #181616;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(237, 28, 36, 0.2);
+    text-align: center;
+}
+
+.container p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #bbb;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-color: #222;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #ED1C24;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ED1C24;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #b1141a;
+    transform: scale(1.05);
+}
+
+.subcontainer {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #bbb;
+}
+
+.subcontainer a {
+    color: #ED1C24;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.subcontainer a:hover {
+    text-decoration: underline;
+}

@@ -79,3 +79,7 @@ def cadastro_usuario():
         flash('Cadastro realizado com sucesso! Agora faça login.', 'success')
         return redirect(url_for('login'))
     return render_template('cadastro_usuario.html')
+
+@app.route('/cadastrar_produto', methods=['GET', 'POST'])
+def cadastrar_produto():
+    return render_template('cadastrar_produto.html')

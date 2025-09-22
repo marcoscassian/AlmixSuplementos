@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Cadastrar Produto{% endblock %}
+
+{% block conteudo %}
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/cadastrar_produto.css') }}">
+
+  <h2>Cadastrar Produtos</h2>
+
+  <form class="form-cadastro" method="POST" action="{{ url_for('cadastrar_produto') }}">
+
+    <label for="titulo">Título:</label>
+    <input type="text" id="titulo" name="titulo" required><br><br>
+  
+    <label for="descricao">Descrição:</label>
+    <textarea id="descricao" name="descricao" rows="4" required></textarea><br><br>
+
+    <button type="submit">Cadastrar</button>
+  </form>
+
+  {% with mensagens = get_flashed_messages() %}
+    {% if mensagens %}
+      <ul>
+        {% for msg in mensagens %}
+          <li>{{ msg }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+{% endblock %}

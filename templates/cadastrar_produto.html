@@ -4,29 +4,25 @@
 
 {% block conteudo %}
 
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/cadastrar_produto.css') }}">
+<link rel="stylesheet" href="static/css/cadastrar_produto.css">
+<div class="pagecenter">
+  <div class="container">
+      <h1>Cadastrar Produto</h1>
+      <p>Crie e poste seus produtos no painel de controle.</p>
 
-  <h2>Cadastrar Produtos</h2>
-
-  <form class="form-cadastro" method="POST" action="{{ url_for('cadastrar_produto') }}">
-
-    <label for="titulo">Título:</label>
-    <input type="text" id="titulo" name="titulo" required><br><br>
-  
-    <label for="descricao">Descrição:</label>
-    <textarea id="descricao" name="descricao" rows="4" required></textarea><br><br>
-
-    <button type="submit">Cadastrar</button>
-  </form>
-
-  {% with mensagens = get_flashed_messages() %}
-    {% if mensagens %}
-      <ul>
-        {% for msg in mensagens %}
-          <li>{{ msg }}</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-  {% endwith %}
+      <form action="{{ url_for('cadastrar_produto') }}" method="post">
+          <div class="input-group">
+              <input type="text" name="name" placeholder="Nome do Produto">
+          </div>
+          <div class="input-group">
+              <input type="number" name="preco" placeholder="Preço" step="0.01" required>
+          </div>
+          <div class="input-group">
+              <input type="descricao" name="descricao" placeholder="Descrição curta">
+          </div>
+          <button>Cadastrar Produto</button>
+      </form>
+  </div>
+</div>
 
 {% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar Produto{% endblock %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/editar_produto.css') }}">
+{% endblock %}
+
+{% block conteudo %}
+<div class="container">
+    <h1>Editar Produto</h1>
+    <form method="POST" action="{{ url_for('editar_produto', id=produto.id) }}">
+        <div class="input-group">
+            <input type="text" name="nome" value="{{ produto.nome }}" placeholder="Nome do Produto" required>
+        </div>
+        <div class="input-group">
+            <input type="number" name="preco" value="{{ produto.preco }}" placeholder="Preço" step="0.01"required>
+        </div>
+        <div class="input-group">
+            <input type="text" name="descricao" value="{{ produto.descricao }}" placeholder="Descrição curta" required>
+        </div>
+        <button type="submit">Salvar Alterações</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,30 +1,29 @@
 {% extends 'base.html' %}
 
+{% block title %}Produtos{% endblock %}
+
 {% block estilos %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
 {% endblock %}
 
 {% block conteudo %}
 
-<div class="cards-container">
-    {% for card in cards %}
-    <div class="card">
-        <div class="imgcard">
-            <div class="tag">
-                <p>{{ card.desconto }}</p>
+<div class="produtos-container">
+    {% for produto in produtos %}
+        <div class="card-produto">
+            <h3>{{ produto.nome }}</h3>
+            <p class="preco">R$ {{ produto.preco }}</p>
+            <p class="descricao">{{ produto.descricao }}</p>
+            
+            <div class="botoes-card">
+                <a class="btn-editar" href="{{ url_for('editar_produto', id=produto.id) }}">Editar</a>
+
+                <form action="{{ url_for('excluir_produto', id=produto.id) }}" method="POST">
+                    <button type="submit" class="btn-excluir">Excluir</button>
+                </form>
             </div>
-            <img src="{{ url_for('static', filename='img/' + card.imagem) }}" alt="Imagem do {{ card.titulo }}">
+
         </div>
-        <div class="content">
-            <h3>{{ card.titulo }}</h3>
-            <h2>{{ card.preco }}</h2>
-            <p>{{ card.descricao }}</p>
-            <div class="editar">
-                <a href="#">editar</a>
-            </div>
-        </div>
-    </div>
     {% endfor %}
 </div>
-
 {% endblock %}

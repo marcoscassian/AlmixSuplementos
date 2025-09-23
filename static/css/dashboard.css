@@ -1,0 +1,74 @@
+.produtos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card-produto {
+    width: 250px;
+    background-color: #181616;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(237, 28, 36, 0.2);
+    color: white;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-produto:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0 25px rgba(237, 28, 36, 0.4);
+}
+
+.card-produto h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.card-produto .preco {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ED1C24;
+}
+
+.card-produto .descricao {
+    font-size: 14px;
+    color: #bbb;
+    margin-bottom: 15px;
+}
+
+.botoes-card {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.btn-editar, .btn-excluir {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.btn-editar {
+    background-color: #ED1C24;
+}
+
+.btn-editar:hover {
+    background-color: #b1141a;
+    transform: scale(1.05);
+}
+
+.btn-excluir {
+    background-color: #555;
+}
+
+.btn-excluir:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}

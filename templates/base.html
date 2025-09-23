@@ -1,51 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        {% block title %}
-            ALMIX Suplementos
-        {% endblock %}
-    </title>
-    <link rel="stylesheet" href="static/css/base.css">
-    {% block estilos %}{% endblock %}
-    <link href="" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}ALMIX Suplementos{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+{% block estilos %}{% endblock %}
 </head>
 <body>
-    {% block cabecalho %}
-    <header>
-        <h1 href="/" class="home">ALMIX Suplementos</h1>
-            
-        <div class="botoes">
-            {% if session.usuario %}
-                <nav class="botoes_logged">
-                    <img src="static/img/product.png" alt="Carrinho">
-                    <a href="/" class="Usuario">Usuario</a> <!-- tem q como sera feito aqui ainda-->
-                </nav>
-            
-            {% else %}
-                <nav class="botoes_logged">
-                    <a href="">
-                        <img src="static/img/product.png" alt="Produtos">
-                    </a>
-                    <a href="">
-                        <img src="static/img/user.png" alt="Login">
-                    </a>
-                </nav>
-            {% endif %}
-        </div>
-    </header>
-    {% endblock %}
-    <h1>
-        {% block pagina %}
-            
-        {% endblock %}
-    </h1>
 
-    {% block conteudo %}
-        
-    {% endblock %}
-    
+{% block cabecalho %}
+<header>
+    <h1 class="home">ALMIX Suplementos</h1>
+    <nav class="botoes_logged">
+        <a href="{{ url_for('dashboard') }}">
+            <img src="{{ url_for('static', filename='img/product.png') }}" alt="Produtos">
+            <span>Produtos</span>
+        </a>
+        <a href="{{ url_for('cadastrar_produto') }}">
+            <img src="{{ url_for('static', filename='img/newproduct.png') }}" alt="Cadastrar Produto">
+            <span>Novo Produto</span>
+        </a>
+        <a href="{{ url_for('logout') }}">
+            <img src="{{ url_for('static', filename='img/logout.png') }}" alt="Logout">
+        </a>
+    </nav>
+</header>
+{% endblock %}
+
+
+<main>
+{% block conteudo %}{% endblock %}
+</main>
+
 </body>
 </html>

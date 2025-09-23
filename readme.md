@@ -37,7 +37,7 @@ Armazena os produtos da loja, com informações como nome, preço e descrição 
   - Listar todos produtos em cards.
   - Editar produtos existentes.
   - Excluir produtos.
-- Frontend responsivo e moderno.
+- Frontend moderno.
 
 ---
 
